@@ -5,8 +5,8 @@ import { toggleMealSelection } from "./mealsSlice";
 import { incrementAvQuantity, decrementAvQuantity } from "./avSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity } from "./venueSlice";
-import EventVenue from "./assets/EventVenue.jpg"
-import speakers from "./assets/speakers.jpg"
+// import EventVenue from "./assets/EventVenue.jpg"
+// import speakers from "./assets/speakers.jpg"
 const ConferenceEvent = () => {
     const [showItems, setShowItems] = useState(false);
     const [numberOfPeople, setNumberOfPeople] = useState(1);
@@ -182,7 +182,7 @@ const mealsTotalCost = calculateTotalCost("meals");
           {venueItems.map((item, index) => (
             <div className="venue_main" key={index}>
               <div className="img">
-                <img src={EventVenue} alt={item.name} />
+                <img src={item.img} alt={item.name} />
               </div>
               <div className="text">{item.name}</div>
               <div>${item.cost}</div>
@@ -247,7 +247,7 @@ const mealsTotalCost = calculateTotalCost("meals");
                                 {avItems.map((item, index) => (
     <div className="av_data venue_main" key={index}>
         <div className="img">
-            <img src={speakers} alt={item.name} />
+            <img src={item.img} alt={item.name} />
         </div>
     <div className="text"> {item.name} </div>
     <div> ${item.cost} </div>
